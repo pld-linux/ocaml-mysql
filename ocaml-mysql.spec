@@ -8,6 +8,7 @@ Group:		Libraries
 Vendor:		Shawn Wagner <shawnw@speakeasy.org>
 URL:		http://raevnos.pennmush.org/code/ocaml.html
 Source0:	http://raevnos.pennmush.org/code/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
 BuildRequires:	mysql-devel
 BuildRequires:	ocaml
 BuildRequires:	ocaml-findlib
