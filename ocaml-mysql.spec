@@ -1,7 +1,7 @@
 Summary:	MySQL binding for OCaml
 Summary(pl):	Wi±zania MySQL dla OCamla
 Name:		ocaml-mysql
-Version:	0.1.1
+Version:	0.1.4
 Release:	1
 License:	BSD
 Group:		Libraries
@@ -58,11 +58,10 @@ ocamlmklib -o mysql mysql.cm[ox] ocmysql.o -lmysqlclient
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_libdir}/ocaml/mysql
-install mysql.cm{[ixa],xa} $RPM_BUILD_ROOT%{_libdir}/ocaml/mysql
-install *.a *.so $RPM_BUILD_ROOT%{_libdir}/ocaml/mysql
+install -d $RPM_BUILD_ROOT%{_libdir}/ocaml/{mysql,stublibs}
+install *.a mysql.cm{[ixa],xa} $RPM_BUILD_ROOT%{_libdir}/ocaml/mysql
+install *.so $RPM_BUILD_ROOT%{_libdir}/ocaml/stublibs
 ln -s mysql.cma $RPM_BUILD_ROOT%{_libdir}/ocaml/mysql/mysqlstatic.cma
-(cd $RPM_BUILD_ROOT%{_libdir}/ocaml && ln -s mysql/dll*.so .)
 
 # META for findlib
 install -d $RPM_BUILD_ROOT%{_libdir}/ocaml/site-lib/mysql
@@ -78,20 +77,15 @@ archive(native) = "mysql.cmxa"
 directory = "+mysql"
 EOF
 
-gzip -9nf README CHANGES COPYING demo.ml
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%dir %{_libdir}/ocaml/mysql
-%attr(755,root,root) %{_libdir}/ocaml/mysql/*.so
-%{_libdir}/ocaml/*.so
+%attr(755,root,root) %{_libdir}/ocaml/stublibs/*.so
 
 %files devel
 %defattr(644,root,root,755)
-%doc *.gz *.html
-%{_libdir}/ocaml/mysql/*.cm[ixa]*
-%{_libdir}/ocaml/mysql/*.a
+%doc README CHANGES COPYING demo.ml *.html
+%{_libdir}/ocaml/mysql
 %{_libdir}/ocaml/site-lib/mysql
