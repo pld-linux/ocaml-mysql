@@ -46,9 +46,8 @@ programów u¿ywaj±cych tej biblioteki.
 
 %build
 autoconf
-%configure CFLAGS="%{rpmcflags} -fpic"
-
-sed -e 's/-cclib $(MYSQLLIB)//' Makefile > Makefile.tmp
+%configure CFLAGS="%{rpmcflags} -fPIC"
+sed -e 's/-cclib $(MYSQLLIB)//; s/-g//' Makefile > Makefile.tmp
 mv -f Makefile.tmp Makefile
 
 %{__make} all opt
@@ -85,13 +84,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%dir %{_libdir}/ocaml/mysql
 %attr(755,root,root) %{_libdir}/ocaml/mysql/*.so
 %{_libdir}/ocaml/*.so
 
 %files devel
 %defattr(644,root,root,755)
 %doc *.gz *.html
-%dir %{_libdir}/ocaml/mysql
 %{_libdir}/ocaml/mysql/*.cm[ixa]*
 %{_libdir}/ocaml/mysql/*.a
-%{_libdir}/ocaml/site-lib/mysql/META
+%{_libdir}/ocaml/site-lib/mysql
