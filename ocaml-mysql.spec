@@ -46,7 +46,7 @@ programów u¿ywaj±cych tej biblioteki.
 %setup -q
 
 %build
-autoconf
+%{__autoconf}
 %configure CFLAGS="%{rpmcflags} -fPIC"
 sed -e 's/-cclib $(MYSQLLIB)//; s/-g//' Makefile > Makefile.tmp
 mv -f Makefile.tmp Makefile
