@@ -1,0 +1,3 @@
+- removed -g from ocamlc flags
+- moved %%{_libdir}/ocaml/mysql to main package (from -devel)
+- -devel now owns entiere site-lib/mysql, not only META in it
