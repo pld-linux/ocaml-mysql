@@ -2,7 +2,7 @@ Summary:	MySQL binding for OCaml
 Summary(pl):	Wi±zania MySQL dla OCamla
 Name:		ocaml-mysql
 Version:	1.0.0
-Release:	3
+Release:	4
 License:	BSD
 Group:		Libraries
 Vendor:		Shawn Wagner <shawnw@speakeasy.org>
