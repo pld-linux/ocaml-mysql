@@ -1,3 +1,5 @@
+# TODO
+# - security http://security.gentoo.org/glsa/glsa-200506-08.xml
 Summary:	MySQL binding for OCaml
 Summary(pl):	Wi±zania MySQL dla OCamla
 Name:		ocaml-mysql
