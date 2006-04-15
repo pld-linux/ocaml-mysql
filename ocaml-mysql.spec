@@ -1,19 +1,19 @@
 # TODO
 # - (build time) security http://security.gentoo.org/glsa/glsa-200506-08.xml
+%define		ocaml_ver	3.09.1
 Summary:	MySQL binding for OCaml
 Summary(pl):	Wi±zania MySQL dla OCamla
 Name:		ocaml-mysql
 Version:	1.0.3
-Release:	4
+Release:	5
 License:	LGPL v2.1+
-Vendor:		Shawn Wagner <shawnw@speakeasy.org>
 Group:		Libraries
 Source0:	http://raevnos.pennmush.org/code/ocaml-mysql/%{name}-%{version}.tar.gz
 # Source0-md5:	3254be1cb6ef8801701a5628e60cfee4
 URL:		http://raevnos.pennmush.org/code/ocaml-mysql/index.html
 BuildRequires:	autoconf
 BuildRequires:	mysql-devel
-BuildRequires:	ocaml >= 3.08
+BuildRequires:	ocaml >= %{ocaml_ver}
 BuildRequires:	ocaml-findlib
 %requires_eq	ocaml-runtime
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -50,7 +50,10 @@ programów u¿ywaj±cych tej biblioteki.
 
 %build
 %{__autoconf}
-%configure CFLAGS="%{rpmcflags} -fPIC"
+%configure \
+	CFLAGS="%{rpmcflags} \
+	-fPIC" \
+
 
 %{__make} all opt
 
