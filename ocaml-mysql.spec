@@ -1,11 +1,11 @@
 # TODO
 # - (build time) security http://security.gentoo.org/glsa/glsa-200506-08.xml
-%define		ocaml_ver	1:3.09.1
+%define		ocaml_ver	1:3.09.2
 Summary:	MySQL binding for OCaml
 Summary(pl):	Wi±zania MySQL dla OCamla
 Name:		ocaml-mysql
 Version:	1.0.3
-Release:	6
+Release:	7
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://raevnos.pennmush.org/code/ocaml-mysql/%{name}-%{version}.tar.gz
