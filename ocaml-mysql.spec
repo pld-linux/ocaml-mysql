@@ -2,7 +2,7 @@
 # - (build time) security http://security.gentoo.org/glsa/glsa-200506-08.xml
 %define		ocaml_ver	1:3.09.2
 Summary:	MySQL binding for OCaml
-Summary(pl):	Wi±zania MySQL dla OCamla
+Summary(pl.UTF-8):   WiÄ…zania MySQL dla OCamla
 Name:		ocaml-mysql
 Version:	1.0.3
 Release:	7
@@ -23,14 +23,14 @@ This library allows OCaml programs to access MySQL databases. This
 package contains files needed to run bytecode OCaml programs using
 this library.
 
-%description -l pl
-Biblioteka ta umo¿liwia programom pisanym w OCamlu dostêp do baz
+%description -l pl.UTF-8
+Biblioteka ta umoÅ¼liwia programom pisanym w OCamlu dostÄ™p do baz
 danych MySQL. Pakiet ten zawiera binaria potrzebne do uruchamiania
-programów u¿ywaj±cych tej biblioteki.
+programÃ³w uÅ¼ywajÄ…cych tej biblioteki.
 
 %package devel
 Summary:	MySQL binding for OCaml - development part
-Summary(pl):	Wi±zania MySQL dla OCamla - cze¶æ programistyczna
+Summary(pl.UTF-8):   WiÄ…zania MySQL dla OCamla - czeÅ›Ä‡ programistyczna
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 %requires_eq	ocaml
@@ -40,10 +40,10 @@ This library allows OCaml programs to access MySQL databases. This
 package contains files needed to develop OCaml programs using this
 library.
 
-%description devel -l pl
-Biblioteka ta umo¿liwia programom pisanym w OCamlu dostêp do baz
-danych MySQL. Pakiet ten zawiera pliki niezbêdne do tworzenia
-programów u¿ywaj±cych tej biblioteki.
+%description devel -l pl.UTF-8
+Biblioteka ta umoÅ¼liwia programom pisanym w OCamlu dostÄ™p do baz
+danych MySQL. Pakiet ten zawiera pliki niezbÄ™dne do tworzenia
+programÃ³w uÅ¼ywajÄ…cych tej biblioteki.
 
 %prep
 %setup -q
